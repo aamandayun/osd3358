@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+	<script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+</head>
+
+<body style = "background-color:#809BC3;">
+
+<h1 style="font-family:Georgia, serif; font-size:60px;" class="center"><b>OSD3358-SM-RED</b></h1>
+<br>
+<br>
+
+
+
+<style>
+	 
+	.center{
+		display:block;
+		margin-left:auto;		
+		margin-right:auto;
+		text-align: center;
+	}
+	
+	.image-container{
+		
+		align-items:center;
+	}
+	.image-container .image-wrapper{
+		text-align: center;
+		margin: 0 20px;
+	}
+	.image-container img{
+		width:120px;
+		height:100px;
+	}
+	
+	.button{
+		background-color: #BF2828;
+		border: none;
+		color: white;
+		padding 30px;
+		text-align: center;
+		font-size: 16px;
+		cursor: pointer;
+		border-radius: 50%;
+		width: 100px;
+		height: 100px;
+		align-items: center;
+	}
+	.button:hover {background-color: #660E0E}	
+
+	.button-container{
+		display: flex;
+		gap: 10px;
+		justify-content: center;
+	}
+
+</style>
+<img src="https://octavosystems.com/octavosystems.com/wp-content/uploads/2018/09/osd3358-sm-red-labels-product-carousel.png" class="center" usemap="#osd3358">
+<map name="osd3358">
+	<area shape="rect" coords="79,6,181,18" alt="expansionHeader" href="http://192.168.7.2:/templates/expansionHeader.html">
+	<area shape="rect" coords="152,25,254,37" alt="UART" href="http://192.168.7.2/templates/uart.html">
+	<area shape="rect" coords="373,267,475,279" alt="power/reset" href="power/reset.html">
+	<area shape="rect" coords="0,211,102,223" alt="bootButton" href="bootButton.html">
+	<area shape="rect" coords="0,115,102,127" alt="microSD" href="microSD.html">
+	<area shape="rect" coords="0,149,102,161" alt="jtag" href="jtag.html">
+	<area shape="rect" coords="208,100,283,172" alt="SiP" href="SiP.html">
+</map>
+<br>
+<br>
+<h1 style="font-family:Georgia, serif;" class="center"><b>SENSORS</b></h1>
+
+<div class="image-container center">
+	<div class="image-wrapper center">
+		<img src="https://cdn.whistler.com/s3/images/weather/00.png" class="center">
+		<p font-family:"serif">Current Temperature Reading: {{temp}} C</p>
+	</div>
+	<div class="image-wrapper">
+		<img src="https://www.wikihow.com/images/thumb/3/3a/Calculate-Barometric-Pressure-Step-4-Version-2.jpg/aid858534-v4-728px-Calculate-Barometric-Pressure-Step-4-Version-2.jpg.webp" class="center">
+		<p font-family:"serif">Current Barometer Reading: {{pressure}} hPa</p>
+	</div>
+</div>
+
+<br><br><br>
+<br>
+
+<h1 font-family:"serif" class="center"><b>LED Control</b></h1>
+	<p class="center">Current Status: {{ status }}</p>
+	
+	<div class="button-container">	
+	<form action="/toggle" method="post">
+		<button type="submit" class="button center">Toggle LED 7</button>
+	</form>
+	</div>
+
+<div>
+<br><br>
+<h1 class="center" style="font-size: 30px"><b>Chip Information</b></h1>
+<p class="center" style="font-size: 22px">cpu usage: {{ cpu_usage }}% </p>
+
+<p class="center" style="font-size:22px">memory usage : {{ memory_usage }}% </p>
+<br><br>
+</div>
+
+</body>
+</html>
